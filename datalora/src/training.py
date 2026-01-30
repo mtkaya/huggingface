@@ -39,14 +39,10 @@ class DATALORATrainer(Trainer):
 
         if epoch < args.warmup_epochs + args.sparsification_epochs:
             progress = (epoch - args.warmup_epochs) / max(args.sparsification_epochs, 1)
-            target = self.model.config.target_retention if hasattr(self.model, "config") else 0.5
-            if hasattr(target, "target_retention"):
-                target = target.target_retention
+            target = self.model.datalora_config.target_retention if hasattr(self.model, "datalora_config") else 0.5
             return 1.0 - progress * (1.0 - target)
 
-        target = self.model.config.target_retention if hasattr(self.model, "config") else 0.5
-        if hasattr(target, "target_retention"):
-            target = target.target_retention
+        target = self.model.datalora_config.target_retention if hasattr(self.model, "datalora_config") else 0.5
         return target
 
     def training_step(self, model, inputs, num_items_in_batch=None):

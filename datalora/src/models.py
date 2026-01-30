@@ -66,7 +66,7 @@ class DATALORAModel(nn.Module):
     def __init__(self, peft_model, config: DATALORAConfig):
         super().__init__()
         self.peft_model = peft_model
-        self.config = config
+        self.datalora_config = config
 
         hidden_size = peft_model.config.hidden_size
         self.router = LoRAExpertRouter(hidden_size, config.num_lora_experts)
@@ -81,7 +81,7 @@ class DATALORAModel(nn.Module):
         self._current_retention = 1.0
 
     @property
-    def config_attr(self):
+    def config(self):
         return self.peft_model.config
 
     @property
