@@ -1,21 +1,16 @@
-# Huggingface
+# huggingface
 
-huggingface repo saver
+Bu repo, Hugging Face ekosistemiyle ilgili denemelerimi / küçük script ve notlarımı topladığım bir çalışma alanı.
 
-## Status
+## Neler var?
 
-- WIP
+- küçük Python denemeleri
+- model/dataset API kullanımıyla ilgili notlar
 
-## Getting Started
+## Durum
 
-```bash
-# TODO: add setup & run instructions
-```
+WIP / kişisel çalışma notları.
 
-## Topics
+## Lisans
 
-- python
-
-## License
-
-See repository license.
+Repo içindeki lisans dosyasına bak.
